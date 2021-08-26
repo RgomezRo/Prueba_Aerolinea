@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>allInternalUsers</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <type>creator</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>RAUL_Id_externo__c</field>
+        <field>Description</field>
+        <field>RecordType</field>
+        <field>LastModifiedBy</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>raul.gomez.trail@lidl.es</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Approval by Logistic Department Director</description>
+        <label>Approval by Logistic Department Director</label>
+        <name>RAUL_Approval_by_Logistic_Department_Director</name>
+    </approvalStep>
+    <description>This process allows the logistic department director to review and approve the products inserted via webservice</description>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>Product2.RecordType</field>
+            <operation>equals</operation>
+            <value>Producto Proveedor Externo</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <label>Provider Products Approval</label>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>
